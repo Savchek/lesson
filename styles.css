@@ -1,3 +1,46 @@
 * {
-	
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+#text-tags .h1 {
+	font-size: 36px;
+}
+
+#text-tags .h2 {
+	font-size: 32px;
+}
+
+#text-tags .h3 {
+	font-size: 28px;
+}
+
+#text-tags .h4 {
+	font-size: 20px;
+}
+
+#text-tags .h5 {
+	font-size: 36px;
+}
+
+#text-color .black {
+	color: black;
+}
+
+#text-color .red {
+	color: red;
+}
+
+#text-color .hex {
+	color: #18b54f;
+}
+
+#text-color .rgb {
+	color: rgb(41, 168, 241);
+}
+
+#text-color .rebeccapurple {
+	color: rebeccapurple;
+}
+

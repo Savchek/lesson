@@ -11,12 +11,26 @@
 
 <body>
 	<div id="text-tags">
-		<input type="radio" name="text-tags" id="h1"><label for="h1">h1</label>
-		<input type="radio" name="text-tags" id="h2"><label for="h2">h2</label>
-		<input type="radio" name="text-tags" id="h3"><label for="h3">h3</label>
-		<input type="radio" name="text-tags" id="h4"><label for="h4">h4</label>
+		<div class="sample-select">
+			<input type="radio" name="text-tags" id="h1" checked="checked"><label for="h1">h1</label>
+			<input type="radio" name="text-tags" id="h2"><label for="h2">h2</label>
+			<input type="radio" name="text-tags" id="h3"><label for="h3">h3</label>
+			<input type="radio" name="text-tags" id="h4"><label for="h4">h4</label>
 
-		<div>Sample text</div>
+			<div class="radio-sample h1" data-prev-class="h1">Sample text</div>
+		</div>
+	</div>
+
+	<div id="text-color">
+		<div class="sample-select">
+			<input type="radio" name="text-color" id="black" checked="checked"><label for="black">black</label>
+			<input type="radio" name="text-color" id="red"><label for="red">red</label>
+			<input type="radio" name="text-color" id="hex"><label for="hex">#18b54f</label>
+			<input type="radio" name="text-color" id="rgb"><label for="rgb">rgb(40,170,240)</label>
+			<input type="radio" name="text-color" id="rebeccapurple"><label for="rebeccapurple">rebeccapurple</label>
+
+			<div class="radio-sample black" data-prev-class="black">Sample text</div>
+		</div>
 	</div>
 </body>
 

@@ -1,8 +1,22 @@
-let textTagsWrap = document.getElementById('text-tags');
+
+changeRadio = event => {
+	let e = event.target;
+	if (!e.checked) return;
+
+	let sample = document.querySelector(`#${e.name} .radio-sample`);
+	let prevClass = sample.dataset.prevClass;
+
+	if (prevClass) {
+		sample.classList.remove(prevClass);
+	}
+
+	sample.classList.add(e.id);
+	sample.dataset.prevClass = e.id;
+};
 
 init = () => {
-	textTagsWrap.querySelectorAll('input').forEach(e => {
-		e.addEventListener('change',);
+	document.querySelectorAll('.sample-select input').forEach(e => {
+		e.addEventListener('change', changeRadio);
 	});
 };
 
