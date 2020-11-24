@@ -28,6 +28,7 @@ input.css-rule {
 	font-size: 18px;
 	font-family: Consolas;
 	border-left: 2px solid silver;
+	box-shadow: inset 0 -6px 11px -8px #04040457;
 }
 
 .css-wrap {
@@ -68,7 +69,7 @@ input.css-rule {
 }
 
 #text-tags .active-sample {
-	animation: text-tags 10s infinite alternate-reverse;
+	animation: text-tags 10s cubic-bezier(1,0,1,0) infinite alternate-reverse;
 }
 
 #text-tags .h1 {
