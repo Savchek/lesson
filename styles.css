@@ -4,24 +4,91 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-size: 18px;
+}
+
+.container {
+	max-width: 1280px;
+	margin: auto;
+	padding: 0 10px;
+}
+
+input, input:active, input:focus {
+	background-color: transparent;
+	font-size: 18px;
+	border: none;
+	outline: none;
+}
+
+input.css-rule {
+	width: 100%;
+	padding: 10px 0 10px 40px;
+	background-color: rgb(223, 223, 223);
+	font-size: 18px;
+	font-family: Consolas;
+	border-left: 2px solid silver;
+}
+
+.css-wrap {
+	padding: 10px;
+	background-color: rgb(243, 243, 243);
+	color: rgb(66, 66, 66);
+	font-family: Consolas;
+	border-left: 2px solid silver;
+	user-select: none;
+}
+
+.interactive-sample {
+	position: relative;
+}
+
+.clear-interactive-sample {
+	position: absolute;
+	top: 30px;
+	right: 10px;
+}
+
+.css-wrap span {
+	color: rgb(219, 157, 106);
+}
+
+@keyframes text-tags {
+	0% { font-size: 2em; font-weight: bold; }
+	10% { font-size: 1.5em; font-weight: bold; }
+	20% { font-size: 1.17em; font-weight: bold; }
+	30% { font-size: 1em; font-weight: bold; }
+	40% { font-size: .83em; font-weight: bold; }
+	40% { font-size: .67em; font-weight: bold; }
+	50% {  font-weight: normal; font-style: italic;}
+	60% { text-decoration: line-through;  font-weight: normal; font-style: normal;}
+	70% { text-decoration: underline;  font-weight: normal; font-style: normal;}
+	80% { display: block; margin-top: auto; text-decoration: none; font-size: 14px; font-weight: normal; font-style: normal;}
+	90% { display: block; margin-bottom: auto; text-decoration: none; font-size: 14px; font-weight: normal; font-style: normal;}
+}
+
+#text-tags .active-sample {
+	animation: text-tags 10s infinite alternate-reverse;
+}
+
 #text-tags .h1 {
-	font-size: 36px;
+	font-size: 2em;
+	font-weight: bold;
 }
 
 #text-tags .h2 {
-	font-size: 32px;
+	font-size: 1.5em;
+	font-weight: bold;
 }
 
 #text-tags .h3 {
-	font-size: 28px;
+	font-size: 1.17em;
+	font-weight: bold;
 }
 
 #text-tags .h4 {
-	font-size: 20px;
-}
-
-#text-tags .h5 {
-	font-size: 36px;
+	font-size: 1em;
+	font-weight: bold;
 }
 
 #text-color .black {
@@ -42,5 +109,23 @@
 
 #text-color .rebeccapurple {
 	color: rebeccapurple;
+}
+
+@keyframes text-color {
+	0% { color: black; }
+	10% { color: rgb(197, 36, 36); }
+	20% { color: rgb(204, 133, 0); }
+	30% { color: rgb(182, 182, 0); }
+	40% { color: rgb(21, 255, 0); }
+	40% { color: rgb(0, 175, 117); }
+	50% { color: rgb(82, 177, 255); }
+	60% { color: rgb(91, 91, 255); }
+	70% { color: rgb(0, 25, 248); }
+	80% { color: rgb(184, 62, 255); }
+	90% { color: rgb(173, 0, 159); }
+}
+
+#text-color .active-sample {
+	animation: text-color 5s infinite linear;
 }
 

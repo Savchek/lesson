@@ -10,26 +10,55 @@
 </head>
 
 <body>
-	<div id="text-tags">
-		<div class="sample-select">
-			<input type="radio" name="text-tags" id="h1" checked="checked"><label for="h1">h1</label>
-			<input type="radio" name="text-tags" id="h2"><label for="h2">h2</label>
-			<input type="radio" name="text-tags" id="h3"><label for="h3">h3</label>
-			<input type="radio" name="text-tags" id="h4"><label for="h4">h4</label>
+	<div class="container">
+		<div id="text-tags">
+			<div class="title-row">
+				<div class="title">Text tags</div>
+				<div class="active-sample">Aa</div>
+			</div>
 
-			<div class="radio-sample h1" data-prev-class="h1">Sample text</div>
+			<div class="description">Text in HTML can be placed in tags</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-tags" id="h1" checked="checked"><label for="h1">h1</label>
+				<input type="radio" name="text-tags" id="h2"><label for="h2">h2</label>
+				<input type="radio" name="text-tags" id="h3"><label for="h3">h3</label>
+				<input type="radio" name="text-tags" id="h4"><label for="h4">h4</label>
+
+				<div class="radio-sample h1" data-prev-class="h1">Sample text</div>
+			</div>
 		</div>
-	</div>
 
-	<div id="text-color">
-		<div class="sample-select">
-			<input type="radio" name="text-color" id="black" checked="checked"><label for="black">black</label>
-			<input type="radio" name="text-color" id="red"><label for="red">red</label>
-			<input type="radio" name="text-color" id="hex"><label for="hex">#18b54f</label>
-			<input type="radio" name="text-color" id="rgb"><label for="rgb">rgb(40,170,240)</label>
-			<input type="radio" name="text-color" id="rebeccapurple"><label for="rebeccapurple">rebeccapurple</label>
+		<div id="text-color">
+			<div class="title-row">
+				<div class="title">Coloring text</div>
+				<div class="active-sample">Aa</div>
+			</div>
 
-			<div class="radio-sample black" data-prev-class="black">Sample text</div>
+			<div class="description">You can set a text color via CSS</div>
+			<div class="sample-select">
+				<input type="radio" name="text-color" id="black" checked="checked"><label for="black">black</label>
+				<input type="radio" name="text-color" id="red"><label for="red">red</label>
+				<input type="radio" name="text-color" id="hex"><label for="hex">#18b54f</label>
+				<input type="radio" name="text-color" id="rgb"><label for="rgb">rgb(40,170,240)</label>
+				<input type="radio" name="text-color" id="rebeccapurple"><label
+					for="rebeccapurple">rebeccapurple</label>
+
+				<div class="radio-sample black" data-prev-class="black">Sample text</div>
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Enter youre own color rule</div>
+				<div class="css-wrap"><span>#color-text</span> {</div>
+				<button class="clear-interactive-sample" data-for="text-color">Reset</button>
+				<input type="text" class="css-rule">
+				<input type="text" class="css-rule">
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<button class="apply-interactive-sample" data-for="text-color">Apply</button>
+				<input class="interactive-text" type="text" placeholder="Enter a text to see effect"
+					value="Your own text">
+			</div>
 		</div>
 	</div>
 </body>
