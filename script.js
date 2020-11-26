@@ -1,3 +1,4 @@
+let linkedInputs;
 
 changeRadio = event => {
 	let e = event.target;
@@ -42,6 +43,12 @@ clearCss = event => {
 	});
 };
 
+changeLinkedText = event => {
+	linkedInputs.forEach(e => {
+		e.value = event.target.value;
+	});
+};
+
 init = () => {
 	document.querySelectorAll('.sample-select input').forEach(e => {
 		e.addEventListener('change', changeRadio);
@@ -55,11 +62,17 @@ init = () => {
 		e.addEventListener('click', clearCss);
 	});
 
+	linkedInputs = document.querySelectorAll('input.linked-input');
+
+	linkedInputs.forEach(e => {
+		e.addEventListener('input', changeLinkedText);
+	});
+
 	document.querySelectorAll('input').forEach(e => {
 		e.addEventListener('keypress', (e) => {
 			if (e.key == 'Enter') {
 				let next = e.target.nextElementSibling;
-				if (next.className == 'css-wrap') {
+				if (next && next.className == 'css-wrap') {
 					next = next.nextElementSibling;
 				}
 				e.target.blur();
