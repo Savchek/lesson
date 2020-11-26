@@ -11,31 +11,91 @@
 
 <body>
 	<div class="container">
+
+		<div id="text-intro">
+			<div class="title-row">
+				<div class="title">Вступ</div>
+			</div>
+
+			<div class="description">
+				На цій сторінці можна вивчити основні властивості CSS впливаючі на текст.<br>
+				Зміст:
+				<div class="links">
+					<a href="#html">HTML теги</a>
+					<a href="#color">Колір</a>
+					<a href="#alignment">Вирівнювання</a>
+					<a href="#decoration">Декорація</a>
+					<a href="#transformation">Трансформація</a>
+					<a href="#spacing">Інтервал</a>
+					<a href="#shadow">Тінь</a>
+					<a href="#family">Родина шрифтів</a>
+					<a href="#style">Стиль шрифтів</a>
+					<a href="#size">Розмір шрифтів</a>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- TAGS -->
+
+		<a id="html"></a>
 		<div id="text-tags">
 			<div class="title-row">
-				<div class="title">Text tags</div>
+				<div class="title">Текстові HTML теги</div>
 				<div class="active-sample">Aa</div>
 			</div>
 
-			<div class="description">Text in HTML can be placed in tags</div>
+			<div class="description">Зовнішній вигляд тексту можна змінити і без css-стилів.<br>
+				Базовий набір варіантів відображення тексту вже вбудований у браузер, достатньо обернути бажаний текст у
+				спеціальний HTML-тег і його відображення на сторінці зміниться<br>
+				Наприклад якщо обернути текст у тег h1 наступним чином: <xmp><h1></xmp>Ваш текст<xmp></h1></xmp></xmp>,
+				то його відображення зміниться до <h1>такого вигляду</h1><br>
+				Також існує багато інших текстових HTML-тегів, наприклад <xmp><sub></xmp><sub>підрядковий</sub>
+				<xmp></sub></xmp>,
+				<xmp><sup></xmp><sup>надрядковий</sup><xmp></sup></xmp>,
+				<xmp><small></xmp><small>маленький</small><xmp></small></xmp> або 
+				<xmp><mark></xmp><mark>виділений</mark><xmp></mark></xmp>
+				<br><br>
+				Нижче можна побачити як відображаються деякі HTML-теги
+			</div>
 
 			<div class="sample-select">
 				<input type="radio" name="text-tags" id="h1" checked="checked"><label for="h1">h1</label>
 				<input type="radio" name="text-tags" id="h2"><label for="h2">h2</label>
 				<input type="radio" name="text-tags" id="h3"><label for="h3">h3</label>
 				<input type="radio" name="text-tags" id="h4"><label for="h4">h4</label>
+				<input type="radio" name="text-tags" id="i"><label for="i">i</label>
+				<input type="radio" name="text-tags" id="del"><label for="del">del</label>
+				<input type="radio" name="text-tags" id="ins"><label for="ins">ins</label>
 
-				<div class="radio-sample h1" data-prev-class="h1">Sample text</div>
+				<input class="linked-input radio-sample h1" data-prev-class="h1" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
 			</div>
 		</div>
 
+		
+		<!-- COLOR -->
+
+		<a id="color"></a>
 		<div id="text-color">
 			<div class="title-row">
-				<div class="title">Coloring text</div>
+				<div class="title">Колір тексту</div>
 				<div class="active-sample">Aa</div>
 			</div>
 
-			<div class="description">You can set a text color via CSS</div>
+			<div class="description">Користуватися вбудованими HTML-тегами звичайно зручно і легко, але часто є потреба більш тонко налаштувати характеристики відображення тексту.<br>
+			Зазвичай це робиться за допомогою CSS стилів.<br>
+			Для того щоб змінити колір тексту потрібно вказати властивіть <code>color</code> у відповідному селекторі.<br>
+			Виглядати це буде приблизно так: <code>color: purple;</code><br>
+			Властивість <code>color</code> може приймати значення у декількох варіантах:
+			<ol>
+				<li>Назва кольору. Наприклад <code>blue</code>, <code>navy</code> або <code>lightblue</code>;</li>
+				<li>HEX значення кольору. Наприклад <code>#1a24ad</code>;</li>
+				<li>RGB значення кольору. Наприклад <code>rgb(26, 36, 173)</code>;</li>
+				<li>HSL значення кольору. Наприклад <code>hsl(145, 94%, 87%)</code>;</li>
+			</ol><br>
+			На прикладі нижче можна побачити декілька варіантів властивості кольору і яким чином вони впливають на текст.
+			</div>
 			<div class="sample-select">
 				<input type="radio" name="text-color" id="black" checked="checked"><label for="black">black</label>
 				<input type="radio" name="text-color" id="red"><label for="red">red</label>
@@ -44,22 +104,496 @@
 				<input type="radio" name="text-color" id="rebeccapurple"><label
 					for="rebeccapurple">rebeccapurple</label>
 
-				<div class="radio-sample black" data-prev-class="black">Sample text</div>
+				<input class="linked-input radio-sample black" data-prev-class="black" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
 			</div>
 
 			<div class="interactive-sample">
-				<div class="description">Enter youre own color rule</div>
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>color: rgb(146, 29, 214);</code>
+				</div>
+			
 				<div class="css-wrap"><span>#color-text</span> {</div>
-				<button class="clear-interactive-sample" data-for="text-color">Reset</button>
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-color">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-color">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+		<!-- ALIGN -->
+
+		<a id="alignment"></a>
+		<div id="text-align">
+			<div class="title-row">
+				<div class="title">Вирівнювання тексту</div>
+				<div class="active-sample">Aa</div>
+			</div>
+
+			<div class="description">
+				Властивістю <code>text-align</code> можна задавати горизонтальне вирівнювання тексту.
+				Властивість приймає наступні значення:
+				<ol>
+					<li><code>left</code> - вирівнювання по лівому краю (стандартне значення);</li>
+					<li><code>right</code> - вирівнювання по правому краю;</li>
+					<li><code>center</code> - вирівнювання по центру;</li>
+					<li><code>justify</code> - текст рівномірно розтягується по всій доступній йому ширині;</li>
+				</ol><br>
+				На прикладі нижче можна побачити результати різних значень:
+			</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-align" id="center" checked="checked"><label for="center">center</label>
+				<input type="radio" name="text-align" id="left"><label for="left">left</label>
+				<input type="radio" name="text-align" id="right"><label for="right">right</label>
+
+				<input class="linked-input radio-sample center" data-prev-class="center" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>text-align: right;</code>
+				</div>
+			
+				<div class="css-wrap"><span>#align-text</span> {</div>
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-align">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-align">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+		<!-- DECORATION -->
+
+		<a id="decoration"></a>
+		<div id="text-decoration">
+			<div class="title-row">
+				<div class="title">Декорація тексту</div>
+				<div class="active-sample">Aa</div>
+			</div>
+
+			<div class="description">
+				Властивістю <code>text-decoration</code> можна задавати декорацію тексту у вигляді стрічки. В залежності від значення стрічка буде в різних позиціях.
+				Властивість приймає наступні значення:
+			<ol>
+				<li><code>overline</code> - стрічка над текстом;</li>
+				<li><code>line-through</code> - стрічка проходить скрізь текст;</li>
+				<li><code>underline</code> - стрічка під текстом;</li>
+				<li><code>none</code> - прибирає декорацию тексту;</li>
+			</ol><br>
+				На прикладі нижче можна побачити результати різних значень:
+			</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-decoration" id="overline" checked="checked"><label for="overline">overline</label>
+				<input type="radio" name="text-decoration" id="line-through"><label for="line-through">line-through</label>
+				<input type="radio" name="text-decoration" id="underline"><label for="underline">underline</label>
+				<input type="radio" name="text-decoration" id="none"><label for="none">none</label>
+
+				<input class="linked-input radio-sample overline" data-prev-class="overline" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>text-decoration: underline;</code>
+				</div>
+			
+				<div class="css-wrap"><span>#decoration-text</span> {</div>
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-decoration">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-decoration">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+		<!-- TRANSFORMATION -->
+
+		<a id="transformation"></a>
+		<div id="text-transform">
+			<div class="title-row">
+				<div class="title">Трансформація тексту</div>
+				<div class="active-sample">Aa</div>
+			</div>
+
+			<div class="description">
+				Властивістю <code>text-transform</code> можна задавати регістр тексту.
+				Властивість приймає наступні значення:
+			<ol>
+				<li><code>uppercase</code> - зводить всі літери до верхнього регістру;</li>
+				<li><code>lowercase</code> - зводить всі літери до нижнього регістру;</li>
+				<li><code>capitalize</code> - зводить перші літери слів до верхнього регістру, всі інші літери слів - до нижнього;</li>
+			</ol><br>
+				На прикладі нижче можна побачити результати різних значень:
+			</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-transform" id="uppercase" checked="checked"><label for="uppercase">uppercase</label>
+				<input type="radio" name="text-transform" id="lowercase"><label for="lowercase">lowercase</label>
+				<input type="radio" name="text-transform" id="capitalize"><label for="capitalize">capitalize</label>
+
+				<input class="linked-input radio-sample uppercase" data-prev-class="uppercase" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>text-transform: uppercase;</code>
+				</div>
+			
+				<div class="css-wrap"><span>#transform-text</span> {</div>
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-transform">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-transform">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+		<!-- SPACING -->
+
+		<a id="spacing"></a>
+		<div id="text-spacing">
+			<div class="title-row">
+				<div class="title">Інтервал тексту</div>
+				<div class="active-sample">Aбвгджз</div>
+			</div>
+
+			<div class="description">
+				До групи що впливають на інтервали у тексті відносяться декілька властивостей.
+				Властивість <code>letter-spacing</code> відповідає за відстань між литерами.<br>
+				Властивість <code>word-spacing</code> відповідає за відстань між словами.<br>
+				Властивістю <code>text-indent</code> можна задати відступ першого речення у параграфі.<br>
+				Властивість <code>line-height</code> задає висоту стрічки тексту не впливаючи на самий текст, у зв'язку з чим візуально змінюється відстань між рядками.<br>
+				Всі ці властивості приймають як значення відстань у пікселях або інших одиницях виміровання CSS.<br><br>
+
+				Також існує властивість - <code>white-space</code> - яка встановлює як відображати пробіли між словами. Вона приймає наступні значення:
+			<ol>
+				<li><code>normal</code> - стандартні, автоматичні переноси рядків;</li>
+				<li><code>nowrap</code> - не враховує пробіли, у наслідок чого весь текст відображається у вигляді одного рядка;</li>
+				<li><code>pre</code> - відображає текст з урахуванням усіх пробілів і переносів рядків, навіть ті, що написані у HTML коді;</li>
+				<li><code>pre-line</code> - пробіли не враховуються, але текст автоматично переноситься на новий рядок якщо йому не вистачає місця;</li>
+				<li><code>pre-wrap</code> - зберігає всі пробіли и переходи на новий рядок у тексті, автоматично переносить текст, якщо він не вміщається;</li>
+			</ol><br>
+				На прикладі нижче можна побачити результати деяких властивостей:
+			</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-spacing" id="ws10" checked="checked"><label for="ws10">word-spacing: 10px;</label>
+				<input type="radio" name="text-spacing" id="ws0"><label for="ws0">word-spacing: 0px;</label>
+				<input type="radio" name="text-spacing" id="wsm10"><label for="wsm10">word-spacing: -10px;</label>
+				<input type="radio" name="text-spacing" id="ls10"><label for="ls10">letter-spacing: 10px;</label>
+				<input type="radio" name="text-spacing" id="ls0"><label for="ls0">letter-spacing: 0px;</label>
+				<input type="radio" name="text-spacing" id="lsm10"><label for="lsm10">letter-spacing: -10px;</label>
+
+				<input class="linked-input radio-sample ws10" data-prev-class="ws10" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>letter-spacing: 10px;</code>
+				</div>
+			
+				<div class="css-wrap"><span>#spacing-text</span> {</div>
+				<input type="text" class="css-rule">
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-spacing">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-spacing">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+		<!-- SHADOW -->
+
+		<a id="shadow"></a>
+		<div id="text-shadow">
+			<div class="title-row">
+				<div class="title">Тінь тексту</div>
+				<div class="active-sample">Aa</div>
+			</div>
+
+			<div class="description">
+				Властивістю <code>text-shadow</code> можна задавати тінь тексту.<br>
+				Властивість приймає 4 значення по порядку:
+			<ol>
+				<li>Зміщення по осі X (може бути від'ємним)</li>
+				<li>Зміщення по осі Y (може бути від'ємним)</li>
+				<li>Рівень розмиття тіні (це значення не є обов'язкомим)</li>
+				<li>Колір тіні</li>
+			</ol><br>
+				На прикладі нижче можна побачити результати різних значень:
+			</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-shadow" id="a" checked="checked"><label for="a">4px 4px red</label>
+				<input type="radio" name="text-shadow" id="b"><label for="b">-20px -10px 5px black</label>
+				<input type="radio" name="text-shadow" id="c"><label for="c">0 0 5px rgb(0, 219, 255)</label>
+
+				<input class="linked-input radio-sample a" data-prev-class="a" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>text-shadow: 4px 4px 2px blue;</code>
+				</div>
+			
+				<div class="css-wrap"><span>#shadow-text</span> {</div>
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-shadow">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-shadow">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+		<!-- FAMILY -->
+
+		<a id="family"></a>
+		<div id="text-family">
+			<div class="title-row">
+				<div class="title">Взаємодія зі шрифтами. Родини шрифтів</div>
+				<div class="active-sample">Aa</div>
+			</div>
+
+			<div class="description">
+				Властивістю <code>font-family</code> можна встановити родину шрифту для тексту.<br>
+				Існує декілька загальних імен шрифтів:
+			<ol>
+				<li><code>Serif</code> - шрифти з засічками. До них входять:
+					<ul>
+						<li><code class="tnr">Times New Roman</code></li>
+						<li><code class="g">Georgia</code></li>
+					</ul>
+				</li>
+				<li><code>Sans-serif</code> - шрифти без засічок. До них входять:
+					<ul>
+						<li><code class="ar">Arial</code></li>
+						<li><code class="va">Verdana</code></li>
+					</ul>
+				</li>
+				<li><code>Monospace</code> - шрифти у яких всі літери мають однакову ширину. До них входять:
+					<ul>
+						<li><code class="cn">Courier New</code></li>
+						<li><code class="lc">Lucida Console</code></li>
+					</ul>
+				</li>
+			</ol><br>
+				Спочатку вказується одна або декілька назв сімейств шрифтів через кому, потім загальна назва шрифтів.<br>
+				Якщо назва сімейства шрифтів з пробілами - необхідно брати її у лапки.<br>
+				Властивість може приймати декілька шрифтів із одного загального простору імен. Це зроблено для того, щоб якщо у користувача відсутній перший шрифт - браузер вікористав наступний вказаний у властивості.<br>
+				<br>На прикладі нижче можна побачити результати різних значень:
+			</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-family" id="tnr" checked="checked"><label for="tnr">Times New Roman</label>
+				<input type="radio" name="text-family" id="ar"><label for="ar">Arial</label>
+				<input type="radio" name="text-family" id="cn"><label for="cn">Courier New</label>
+
+				<input class="linked-input radio-sample tnr" data-prev-class="tnr" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>font-family: 'Times New Roman', Times, serif;</code>
+				</div>
+			
+				<div class="css-wrap"><span>#family-text</span> {</div>
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-family">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-family">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+		<!-- STYLE -->
+
+		<a id="style"></a>
+		<div id="text-style">
+			<div class="title-row">
+				<div class="title">Стилі тексту</div>
+				<div class="active-sample">Aa</div>
+			</div>
+
+			<div class="description">
+				Загальна стилізація включає в себе декілька властивостей:<br>
+				Властивість <code>font-style</code> відповідає за написання літер.<br>
+				Приймає такі значення:
+			<ol>
+				<li><code>normal</code> - звичайні літери;</li>
+				<li><code class="ita">italic</code> - нахилені літери;</li>
+				<li><code class="ita">oblique</code> - нахилені літери (значення дуже схоже до <code>italic</code>, але погано підтримується);</li>
+			</ol><br>
+
+			Властивість <code>font-weight</code> відповідає за товщину літер.<br>
+				Приймає такі значення:
+			<ol>
+				<li><code class="bold">bold</code> - широкі літери;</li>
+				<li><code class="norm">normal</code> - звичайні літери;</li>
+				<li><code class="lighter">lignter</code> - тонкі літери;</li>
+			</ol><br>
+
+			Властивість <code>font-variant</code> відповідає за специфічне написання літер.<br>
+				Приймає такі значення:
+			<ol>
+				<li><code>normal</code> - звичайні літери;</li>
+				<li><code class="sc">small-caps</code> - маленькі літери трансформуються до великих, а великі заміняються такими ж але меншого розміру;</li>
+			</ol><br><br>
+				На прикладі нижче можна побачити результати різних значень:
+			</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-style" id="bold" checked="checked"><label for="bold">font-weight: bold;</label>
+				<input type="radio" name="text-style" id="ita"><label for="ita">font-style: italic;</label>
+				<input type="radio" name="text-style" id="sc"><label for="sc">font-variant: small-caps;</label>
+
+				<input class="linked-input radio-sample b" data-prev-class="b" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>font-weight: normal;</code>
+				</div>
+			
+				<div class="css-wrap"><span>#style-text</span> {</div>
 				<input type="text" class="css-rule">
 				<input type="text" class="css-rule">
 				<input type="text" class="css-rule">
 				<div class="css-wrap">}</div>
-				<button class="apply-interactive-sample" data-for="text-color">Apply</button>
-				<input class="interactive-text" type="text" placeholder="Enter a text to see effect"
-					value="Your own text">
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-style">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-style">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
 			</div>
 		</div>
+
+		<!-- SIZE -->
+
+		<a id="size"></a>
+		<div id="text-size">
+			<div class="title-row">
+				<div class="title">Розмір тексту</div>
+				<div class="active-sample">Aa</div>
+			</div>
+
+			<div class="description">
+				Властивістю <code>font-size</code> можна задавати розмір тексту.<br>
+				Властивість приймає значення у пікселях або інших одиницях виміровання CSS.<br><br>
+				На прикладі нижче можна побачити результати різних значень:
+			</div>
+
+			<div class="sample-select">
+				<input type="radio" name="text-size" id="px10"><label for="px10">10px</label>
+				<input type="radio" name="text-size" id="px20"><label for="px20">20px</label>
+				<input type="radio" name="text-size" id="px30" checked="checked"><label for="px30">30px</label>
+				<input type="radio" name="text-size" id="px40"><label for="px40">40px</label>
+
+				<input class="linked-input radio-sample px30" data-prev-class="px30" value="Зразок тексту"
+					placeholder="Тут можна ввести свій текст" />
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">Тут можна спробувати написати власну CSS властивість і подивитися як вона вплине на текст.<br>
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span><br>
+				Приклад правильно написаної CSS властивості: <code>font-size: 14px;</code>
+				</div>
+			
+				<div class="css-wrap"><span>#size-text</span> {</div>
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-size">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-size">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+
+
+
+		<div id="text-train">
+			<div class="title-row">
+				<div class="title">Висновки</div>
+			</div>
+
+			<div class="description">
+				В кінці можна згадати все що було раніше і потренуватися у використанні CSS властивостей.
+			</div>
+
+			<div class="interactive-sample">
+				<div class="description">
+				<span>Не забувайте правила написання CSS властивостей! Двокрапка після властивості, крапка з комою після значення.</span>
+				</div>
+			
+				<div class="css-wrap"><span>#train-text</span> {</div>
+				<input type="text" class="css-rule">
+				<input type="text" class="css-rule">
+				<input type="text" class="css-rule">
+				<input type="text" class="css-rule">
+				<input type="text" class="css-rule">
+				<div class="css-wrap">}</div>
+				<div class="actions-wrap">
+					<button class="apply-interactive-sample" data-for="text-train">Задати</button>
+					<button class="clear-interactive-sample" data-for="text-train">Прибрати</button>
+				</div>
+				<input class="linked-input interactive-text" type="text" placeholder="Тут можна ввести свій текст"
+					value="Зразок тексту">
+
+			</div>
+		</div>
+
+
 	</div>
 </body>
 
