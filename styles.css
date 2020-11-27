@@ -14,10 +14,6 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-ul {
-	list-style: none;
-}
-
 .container {
 	max-width: 1280px;
 	margin: auto;
@@ -111,6 +107,7 @@ input.css-rule {
 }
 
 .title-row {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -122,13 +119,16 @@ input.css-rule {
 }
 
 .title-row .title {
-	margin-left: 50px;
+	position: absolute;
+	left: 50%;
 	text-decoration: underline;
 	font-size: 30px;
 	font-weight: bold;
+	transform: translateX(-50%);
 }
 
 .title-row .active-sample {
+	margin-left: auto;
 	font-size: 30px;
 	font-weight: bold;
 }
